@@ -37,7 +37,7 @@ func Profile(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(r.Context(), time.Duration(sec)*time.Second)
 	defer cancel()
 	if err = collectCPUProfile(ctx, w); err != nil {
-		serveError(w, http.StatusexternalServerError, fmt.Sprintf("Could not enable CPU profiling: %s", err))
+		serveError(w, http.StatusInternalServerError, fmt.Sprintf("Could not enable CPU profiling: %s", err))
 	}
 }
 
