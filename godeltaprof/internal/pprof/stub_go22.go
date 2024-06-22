@@ -6,6 +6,7 @@ package pprof
 import (
 	"runtime"
 	_ "unsafe"
+	_ "runtime/pprof"
 )
 
 // runtime_FrameStartLine is defined in runtime/symtab.go.
