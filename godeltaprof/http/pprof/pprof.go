@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"github.com/grafana/pyroscope-go/godeltaprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
 )
 
 var (

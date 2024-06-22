@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/pyroscope-go/godeltaprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
 	"github.com/stretchr/testify/require"
 )
 
@@ -57,7 +57,7 @@ func TestGenericsShape(t *testing.T) {
 
 	runtime.GC()
 
-	const expectedOmmitedShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsShape;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedOmmitedShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsShape;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat.genericAllocFunc\\[\\.\\.\\.\\]$"
 
 	t.Run("go runtime", func(t *testing.T) {
@@ -103,7 +103,7 @@ func TestBlock(t *testing.T) {
 
 	triggerGenericBlock()
 
-	const expectedOmmitedShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedOmmitedShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat\\.genericBlock\\[\\.\\.\\.\\];sync\\.\\(\\*Mutex\\)\\.Lock"
 
 	t.Run("go runtime", func(t *testing.T) {
@@ -149,7 +149,7 @@ func TestMutex(t *testing.T) {
 
 	triggerGenericBlock()
 
-	const expectedOmmitedShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedOmmitedShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat\\.genericBlock\\[\\.\\.\\.\\];sync\\.\\(\\*Mutex\\)\\.Unlock"
 
 	t.Run("go runtime", func(t *testing.T) {

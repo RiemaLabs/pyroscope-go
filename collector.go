@@ -6,8 +6,8 @@ import (
 	"io"
 	"time"
 
-	internal "github.com/grafana/pyroscope-go/internal/pprof"
-	"github.com/grafana/pyroscope-go/upstream"
+	internal "github.com/RiemaLabs/pyroscope-go/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 
 type cpuProfileCollector struct {

@@ -5,7 +5,7 @@ import (
 	"runtime/pprof"
 	"strings"
 
-	"github.com/grafana/pyroscope-go"
+	"github.com/RiemaLabs/pyroscope-go"
 	"go.opentelemetry.io/otel/baggage"
 )
 

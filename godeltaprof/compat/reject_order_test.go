@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	gprofile "github.com/google/pprof/profile"
-	"github.com/grafana/pyroscope-go/godeltaprof/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof/internal/pprof"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

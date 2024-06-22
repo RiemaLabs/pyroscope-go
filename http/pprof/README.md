@@ -24,7 +24,7 @@ reliable way to avoid the conflict.
 import (
     "net/http"
 
-    "github.com/grafana/pyroscope-go/http/pprof"
+    "github.com/RiemaLabs/pyroscope-go/http/pprof"
 )
 
 func main() {

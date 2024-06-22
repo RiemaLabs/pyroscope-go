@@ -1,7 +1,7 @@
 package pyroscope
 
 import (
-	"github.com/grafana/pyroscope-go/upstream"
+	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 
 var (

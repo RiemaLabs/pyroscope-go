@@ -6,7 +6,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/grafana/pyroscope-go/godeltaprof/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof/internal/pprof"
 )
 
 // BlockProfiler is a stateful profiler for goroutine blocking events and mutex contention in Go programs.

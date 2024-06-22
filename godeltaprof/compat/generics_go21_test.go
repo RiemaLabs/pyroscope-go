@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/pyroscope-go/godeltaprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
 	"github.com/stretchr/testify/require"
 )
 
@@ -64,8 +64,8 @@ func TestGenericsShape(t *testing.T) {
 
 	runtime.GC()
 
-	const expectedRealShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsShape;github.com/grafana/pyroscope-go/godeltaprof/compat.genericAllocFunc\\[go\\.shape\\.int\\]$"
-	const expectedOmmitedShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsShape;github.com/grafana/pyroscope-go/godeltaprof/compat.genericAllocFunc\\[\\.\\.\\.\\]$"
+	const expectedRealShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsShape;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.genericAllocFunc\\[go\\.shape\\.int\\]$"
+	const expectedOmmitedShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsShape;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.genericAllocFunc\\[\\.\\.\\.\\]$"
 
 	t.Run("go runtime", func(t *testing.T) {
 		buffer = bytes.NewBuffer(nil)
@@ -109,10 +109,10 @@ func TestBlock(t *testing.T) {
 
 	triggerGenericBlock()
 
-	const expectedOmmitedShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedOmmitedShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat\\.genericBlock\\[\\.\\.\\.\\];sync\\.\\(\\*Mutex\\)\\.Lock"
 
-	const expectedRealShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedRealShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat\\.genericBlock\\[go\\.shape\\.int];sync\\.\\(\\*Mutex\\)\\.Lock"
 
 	t.Run("go runtime", func(t *testing.T) {
@@ -158,10 +158,10 @@ func TestMutex(t *testing.T) {
 
 	triggerGenericBlock()
 
-	const expectedOmmitedShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedOmmitedShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat\\.genericBlock\\[\\.\\.\\.\\];sync\\.\\(\\*Mutex\\)\\.Unlock"
 
-	const expectedRealShape = "github.com/grafana/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/grafana/pyroscope-go/godeltaprof/" +
+	const expectedRealShape = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.triggerGenericBlock.func1;github.com/RiemaLabs/pyroscope-go/godeltaprof/" +
 		"compat\\.genericBlock\\[go\\.shape\\.int];sync\\.\\(\\*Mutex\\)\\.Unlock"
 
 	t.Run("go runtime", func(t *testing.T) {
@@ -251,10 +251,10 @@ func TestGenericsHashKeyInPprofBuilder(t *testing.T) {
 
 	actual := profileToStrings(p)
 	expected := []string{
-		"testing.tRunner;github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/grafana/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint32] [1 128 0 0]",
-		"testing.tRunner;github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/grafana/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint32] [1 256 0 0]",
-		"testing.tRunner;github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/grafana/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint64] [1 32 0 0]",
-		"testing.tRunner;github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/grafana/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint64] [1 64 0 0]",
+		"testing.tRunner;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint32] [1 128 0 0]",
+		"testing.tRunner;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint32] [1 256 0 0]",
+		"testing.tRunner;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint64] [1 32 0 0]",
+		"testing.tRunner;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsHashKeyInPprofBuilder;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.genericAllocFunc[go.shape.uint64] [1 64 0 0]",
 	}
 
 	for _, l := range expected {
@@ -311,9 +311,9 @@ func TestGenericsInlineLocations(t *testing.T) {
 		t.Fatalf("profile.Parse: %v", err)
 	}
 
-	const expectedSample = "testing.tRunner;github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsInlineLocations;github.com/grafana/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct {},go.shape.struct { github.com/grafana/pyroscope-go/godeltaprof/compat.buf [128]uint8 }];github.com/grafana/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct { github.com/grafana/pyroscope-go/godeltaprof/compat.buf [128]uint8 },go.shape.struct {}];github.com/grafana/pyroscope-go/godeltaprof/compat.storeAlloc [1 16 1 16]"
-	const expectedLocation = "github.com/grafana/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct {},go.shape.struct { github.com/grafana/pyroscope-go/godeltaprof/compat.buf [128]uint8 }];github.com/grafana/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct { github.com/grafana/pyroscope-go/godeltaprof/compat.buf [128]uint8 },go.shape.struct {}];github.com/grafana/pyroscope-go/godeltaprof/compat.storeAlloc"
-	const expectedLocationNewInliner = "github.com/grafana/pyroscope-go/godeltaprof/compat.TestGenericsInlineLocations;" + expectedLocation
+	const expectedSample = "testing.tRunner;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsInlineLocations;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct {},go.shape.struct { github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.buf [128]uint8 }];github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct { github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.buf [128]uint8 },go.shape.struct {}];github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.storeAlloc [1 16 1 16]"
+	const expectedLocation = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct {},go.shape.struct { github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.buf [128]uint8 }];github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.nonRecursiveGenericAllocFunction[go.shape.struct { github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.buf [128]uint8 },go.shape.struct {}];github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.storeAlloc"
+	const expectedLocationNewInliner = "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestGenericsInlineLocations;" + expectedLocation
 	var s *profile.Sample
 	for _, sample := range p.Sample {
 		if sampleToString(sample) == expectedSample {
@@ -338,7 +338,7 @@ func OptimizationOff() bool {
 	}
 	pc := optimizationMarker()
 	f := runtime.FuncForPC(runtime.FuncForPC(pc).Entry())
-	return f.Name() == "github.com/grafana/pyroscope-go/godeltaprof/compat.OptimizationOff.func1"
+	return f.Name() == "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.OptimizationOff.func1"
 }
 
 func WriteHeapProfile(w io.Writer) error {

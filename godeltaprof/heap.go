@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/grafana/pyroscope-go/godeltaprof/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof/internal/pprof"
 )
 
 // HeapProfiler is a stateful profiler for heap allocations in Go programs.

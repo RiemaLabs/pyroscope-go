@@ -7,7 +7,7 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"github.com/grafana/pyroscope-go/upstream/remote"
+	"github.com/RiemaLabs/pyroscope-go/upstream/remote"
 )
 
 type Config struct {

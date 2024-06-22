@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/pyroscope-go/upstream"
+	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 
 func Test_StartCPUProfile_interrupts_background_profiling(t *testing.T) {

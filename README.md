@@ -9,7 +9,7 @@ For more information, please visit our [golang integration documentation](https:
 To start profiling a Go application, you need to include our go module in your app:
 
 ```
-go get github.com/grafana/pyroscope-go
+go get github.com/RiemaLabs/pyroscope-go
 ```
 
 Then add the following code to your application:
@@ -17,7 +17,7 @@ Then add the following code to your application:
 ```go
 package main
 
-import "github.com/grafana/pyroscope-go"
+import "github.com/RiemaLabs/pyroscope-go"
 
 func main() {
   pyroscope.Start(pyroscope.Config{

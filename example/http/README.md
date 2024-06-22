@@ -1,6 +1,6 @@
 # Pyroscope CPU Profiler HTTP Handler
 
-This is an example of how you can use `github.com/grafana/pyroscope-go/http/pprof` package to use standard Go `/debug/pprof/profile` profiler along with Pyroscope continuous profiler.
+This is an example of how you can use `github.com/RiemaLabs/pyroscope-go/http/pprof` package to use standard Go `/debug/pprof/profile` profiler along with Pyroscope continuous profiler.
 
 ### Problem
 
@@ -23,7 +23,7 @@ With each invocation of the handler, it suspends the Pyroscope profiler, gathers
 
 Standard `net/http/pprof` package registers its handlers automatically for the default HTTP server, but this package does not to avoid runtime errors due to the standard Go pprof HTTP endpoint `/debug/pprof/profile` being already registered.
 
-It is highly recommended that you create a separate HTTP server and register pprof handlers on it. Then you can use Pyroscope's `github.com/grafana/pyroscope-go/http/pprof` package to register a handler that will collect CPU profiles and send them to Pyroscope while allowing you to still use the standard Go pprof HTTP endpoint `/debug/pprof/profile`.
+It is highly recommended that you create a separate HTTP server and register pprof handlers on it. Then you can use Pyroscope's `github.com/RiemaLabs/pyroscope-go/http/pprof` package to register a handler that will collect CPU profiles and send them to Pyroscope while allowing you to still use the standard Go pprof HTTP endpoint `/debug/pprof/profile`.
 
 ### Example
 
@@ -35,8 +35,8 @@ import (
 	"net/http/pprof"
 	"time"
 
-	"github.com/grafana/pyroscope-go"
-	pyroscope_pprof "github.com/grafana/pyroscope-go/http/pprof"
+	"github.com/RiemaLabs/pyroscope-go"
+	pyroscope_pprof "github.com/RiemaLabs/pyroscope-go/http/pprof"
 )
 
 func main() {

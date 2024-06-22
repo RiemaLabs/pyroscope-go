@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/grafana/pyroscope-go/godeltaprof"
-	"github.com/grafana/pyroscope-go/internal/flameql"
-	"github.com/grafana/pyroscope-go/upstream"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
+	"github.com/RiemaLabs/pyroscope-go/internal/flameql"
+	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 
 type Session struct {

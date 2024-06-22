@@ -5,8 +5,8 @@ import (
 	"net/http/pprof"
 	"time"
 
-	"github.com/grafana/pyroscope-go"
-	pyroscope_pprof "github.com/grafana/pyroscope-go/http/pprof"
+	"github.com/RiemaLabs/pyroscope-go"
+	pyroscope_pprof "github.com/RiemaLabs/pyroscope-go/http/pprof"
 )
 
 func main() {

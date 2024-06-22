@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	internal "github.com/grafana/pyroscope-go/internal/pprof"
+	internal "github.com/RiemaLabs/pyroscope-go/internal/pprof"
 )
 
 // Profile responds with the pprof-formatted cpu profile.

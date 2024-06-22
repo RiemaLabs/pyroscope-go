@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/grafana/pyroscope-go/godeltaprof"
-	_ "github.com/grafana/pyroscope-go/godeltaprof/http/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
+	_ "github.com/RiemaLabs/pyroscope-go/godeltaprof/http/pprof"
 )
 
 //go:noinline

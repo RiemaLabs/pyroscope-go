@@ -11,7 +11,7 @@ import (
 	"time"
 
 	gprofile "github.com/google/pprof/profile"
-	"github.com/grafana/pyroscope-go/godeltaprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -58,7 +58,7 @@ func TestScaleMutex(t *testing.T) {
 
 	res := stackCollapseProfile(t, profile)
 
-	my := findStack(t, res, "github.com/grafana/pyroscope-go/godeltaprof/compat.TestScaleMutex")
+	my := findStack(t, res, "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestScaleMutex")
 	require.NotNil(t, my)
 
 	fmt.Println(my.value[0], my.value[1])
@@ -106,7 +106,7 @@ func TestScaleBlock(t *testing.T) {
 
 	res := stackCollapseProfile(t, profile)
 
-	my := findStack(t, res, "github.com/grafana/pyroscope-go/godeltaprof/compat.TestScaleBlock")
+	my := findStack(t, res, "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestScaleBlock")
 	require.NotNil(t, my)
 
 	fmt.Println(my.value[0], my.value[1])
@@ -163,7 +163,7 @@ func TestScaleHeap(t *testing.T) {
 
 	res := stackCollapseProfile(t, profile)
 
-	my := findStack(t, res, "github.com/grafana/pyroscope-go/godeltaprof/compat.TestScaleHeap;github.com/grafana/pyroscope-go/godeltaprof/compat.appendBuf")
+	my := findStack(t, res, "github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.TestScaleHeap;github.com/RiemaLabs/pyroscope-go/godeltaprof/compat.appendBuf")
 	require.NotNil(t, my)
 
 	fmt.Println(my.value)

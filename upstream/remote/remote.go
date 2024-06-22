@@ -16,7 +16,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/grafana/pyroscope-go/upstream"
+	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 
 var errCloudTokenRequired = errors.New("please provide an authentication token. You can find it here: https://pyroscope.io/cloud")

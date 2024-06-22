@@ -1,4 +1,4 @@
-module github.com/grafana/pyroscope-go/godeltaprof
+module github.com/RiemaLabs/pyroscope-go/godeltaprof
 
 go 1.18
 
