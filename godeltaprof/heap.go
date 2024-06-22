@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/RiemaLabs/pyroscope-go/godeltaprof/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof/external/pprof"
 )
 
 // HeapProfiler is a stateful profiler for heap allocations in Go programs.
@@ -19,7 +19,7 @@ import (
 // and results in profiles that represent the entire lifetime of the program.
 //
 // The HeapProfiler is safe for concurrent use, as it serializes access to
-// its internal state using a sync.Mutex. This ensures that multiple goroutines
+// its external state using a sync.Mutex. This ensures that multiple goroutines
 // can call the Profile method without causing any data race issues.
 //
 // Usage:

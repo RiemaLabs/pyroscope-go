@@ -13,7 +13,7 @@ import (
 type Config struct {
 	ApplicationName   string // e.g backend.purchases
 	Tags              map[string]string
-	ServerAddress     string // e.g http://pyroscope.services.internal:4040
+	ServerAddress     string // e.g http://pyroscope.services.external:4040
 	AuthToken         string // specify this token when using pyroscope cloud
 	BasicAuthUser     string // http basic auth user
 	BasicAuthPassword string // http basic auth password

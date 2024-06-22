@@ -6,7 +6,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/RiemaLabs/pyroscope-go/godeltaprof/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof/external/pprof"
 )
 
 // BlockProfiler is a stateful profiler for goroutine blocking events and mutex contention in Go programs.
@@ -21,7 +21,7 @@ import (
 // and result in profiles that represent the entire lifetime of the program.
 //
 // The BlockProfiler is safe for concurrent use, as it serializes access to
-// its internal state using a sync.Mutex. This ensures that multiple goroutines
+// its external state using a sync.Mutex. This ensures that multiple goroutines
 // can call the Profile method without causing any data race issues.
 type BlockProfiler struct {
 	impl           pprof.DeltaMutexProfiler

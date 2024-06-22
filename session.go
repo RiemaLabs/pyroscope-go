@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/RiemaLabs/pyroscope-go/godeltaprof"
-	"github.com/RiemaLabs/pyroscope-go/internal/flameql"
+	"github.com/RiemaLabs/pyroscope-go/external/flameql"
 	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 

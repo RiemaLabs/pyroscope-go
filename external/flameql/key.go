@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/RiemaLabs/pyroscope-go/internal/sortedmap"
+	"github.com/RiemaLabs/pyroscope-go/external/sortedmap"
 )
 
 type Key struct {

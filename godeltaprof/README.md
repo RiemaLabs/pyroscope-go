@@ -36,7 +36,7 @@ There are number of issues with this approach:
 
 ## DataDog's fastdelta
 
-DataDog's [fastdelta profiler](https://github.com/DataDog/dd-trace-go/blob/30e1406c2cb62af749df03d559853e1d1de0e3bf/profiler/internal/fastdelta/fd.go#L75) uses another approach. 
+DataDog's [fastdelta profiler](https://github.com/DataDog/dd-trace-go/blob/30e1406c2cb62af749df03d559853e1d1de0e3bf/profiler/external/fastdelta/fd.go#L75) uses another approach. 
 
 It improves the runtime/pprof approach by keeping a copy of the previous profile and subtracting the current profile from it.
 The fastdelta profiler uses a custom protobuf pprof parser that doesn't allocate as much memory.

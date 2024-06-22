@@ -6,7 +6,7 @@ import (
 	"io"
 	"time"
 
-	internal "github.com/RiemaLabs/pyroscope-go/internal/pprof"
+	external "github.com/RiemaLabs/pyroscope-go/external/pprof"
 	"github.com/RiemaLabs/pyroscope-go/upstream"
 )
 
@@ -15,7 +15,7 @@ type cpuProfileCollector struct {
 	dur  time.Duration
 
 	upstream  upstream.Upstream
-	collector internal.Collector
+	collector external.Collector
 	logger    Logger
 
 	buf         *bytes.Buffer
@@ -71,7 +71,7 @@ func newCPUProfileCollector(
 		dur:       period,
 		upstream:  upstream,
 		logger:    logger,
-		collector: internal.DefaultCollector(),
+		collector: external.DefaultCollector(),
 		buf:       buf,
 		events:    make(chan event),
 		halt:      make(chan struct{}),
@@ -81,9 +81,9 @@ func newCPUProfileCollector(
 
 func (c *cpuProfileCollector) Start() {
 	c.logger.Debugf("starting cpu profile collector")
-	// From now on, internal pprof.StartCPUProfile
+	// From now on, external pprof.StartCPUProfile
 	// is handled by this collector.
-	internal.SetCollector(c)
+	external.SetCollector(c)
 	t := time.NewTicker(c.dur)
 
 	// Force pprof.StartCPUProfile: if CPU profiling is already
@@ -171,9 +171,9 @@ func (c *cpuProfileCollector) handleEvent(e event) {
 func (c *cpuProfileCollector) Stop() {
 	c.logger.Debugf("stopping cpu profile collector")
 	// Switches back to the standard pprof collector.
-	// If internal pprof.StartCPUProfile is called,
+	// If external pprof.StartCPUProfile is called,
 	// the function blocks until StopCPUProfile.
-	internal.SetCollector(c.collector)
+	external.SetCollector(c.collector)
 	// Note that "halt" is not an event, but rather state
 	// of the collector: the channel can be read multiple
 	// times before the collector stops.

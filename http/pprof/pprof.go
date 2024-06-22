@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	internal "github.com/RiemaLabs/pyroscope-go/internal/pprof"
+	external "github.com/RiemaLabs/pyroscope-go/external/pprof"
 )
 
 // Profile responds with the pprof-formatted cpu profile.
@@ -37,7 +37,7 @@ func Profile(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(r.Context(), time.Duration(sec)*time.Second)
 	defer cancel()
 	if err = collectCPUProfile(ctx, w); err != nil {
-		serveError(w, http.StatusInternalServerError, fmt.Sprintf("Could not enable CPU profiling: %s", err))
+		serveError(w, http.StatusexternalServerError, fmt.Sprintf("Could not enable CPU profiling: %s", err))
 	}
 }
 
@@ -55,10 +55,10 @@ func serveError(w http.ResponseWriter, status int, txt string) {
 }
 
 func collectCPUProfile(ctx context.Context, w io.Writer) error {
-	if err := internal.StartCPUProfile(w); err != nil {
+	if err := external.StartCPUProfile(w); err != nil {
 		return err
 	}
 	<-ctx.Done()
-	internal.StopCPUProfile()
+	external.StopCPUProfile()
 	return nil
 }

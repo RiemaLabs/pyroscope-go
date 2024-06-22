@@ -2,7 +2,7 @@ package compat
 
 import (
 	"bytes"
-	"github.com/RiemaLabs/pyroscope-go/godeltaprof/internal/pprof"
+	"github.com/RiemaLabs/pyroscope-go/godeltaprof/external/pprof"
 	"github.com/stretchr/testify/assert"
 	"io"
 	"math/rand"
